@@ -6,6 +6,7 @@ require_once('connection.php'); ?>
 
 </header>
 <body>
+   <!-- I added some changes here ......  -->
 
 <section class="top">
 
@@ -14,7 +15,8 @@ require_once('connection.php'); ?>
          <img class="burger-menu" src="Hamburger_icon.svg.png">
       </div>
 
-      <div class="icon">
+      <div class="icon"> 
+
          <img src="icon.png">
          <p>Kontakte</p>
       </div>

@@ -1,0 +1,29 @@
+alter table myTable
+add image LONGBLOB;
+
+INSERT INTO myTable
+set image = LOAD_FILE('D:/sherwan.jpg');
+
+
+SELECT image  FROM myTable WHERE id = 1;
+
+
+if($_POST['live-search']){
+
+    $value =  'Sherwan';
+    $sql = "SELECT * FROM contacts WHERE firstName LIKE '$value%'";
+
+    $result = MySQLi_query($connection, $sql);
+
+    echo '<ul>';
+    while($row = mysqli_fetch_array($result)){
+        ?>
+        <li onclick="">
+        <div class="live-search-image">
+            <img src="data:image/webp;charset=utf8;base64,<?php echo base64_encode($row['image']);?>"></div>
+            <?php echo $row['firstName'] ?>
+        </li>
+
+        <?php
+    }
+}

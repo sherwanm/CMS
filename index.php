@@ -15,8 +15,7 @@ require_once('connection.php'); ?>
          <img class="burger-menu" src="Hamburger_icon.svg.png">
       </div>
 
-      <div class="icon"> 
-
+      <div class="icon">
          <img src="icon.png">
          <p>Kontakte</p>
       </div>
@@ -39,7 +38,7 @@ require_once('connection.php'); ?>
    <section class="right" >
 
    <?php
-
+   
       $sql = "SELECT firstName FROM contacts ;";
       $result = MySQLi_query($connection, $sql);
 

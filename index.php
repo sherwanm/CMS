@@ -6,7 +6,8 @@ require_once('connection.php'); ?>
 
 </header>
 <body>
-   <!-- I added some changes here ......  -->
+
+<!-- Hallo World -->
 
 <section class="top">
 
@@ -16,6 +17,7 @@ require_once('connection.php'); ?>
       </div>
 
       <div class="icon">
+         
          <img src="icon.png">
          <p>Kontakte</p>
       </div>
@@ -38,7 +40,7 @@ require_once('connection.php'); ?>
    <section class="right" >
 
    <?php
-   
+
       $sql = "SELECT firstName FROM contacts ;";
       $result = MySQLi_query($connection, $sql);
 

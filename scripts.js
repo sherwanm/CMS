@@ -16,14 +16,14 @@ addIcon.addEventListener('click', function(){
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.onreadystatechange = function(){
         if(xhr.readyState  === 4 && xhr.status == 200){
-            addSection.innerHTML = xhr.responseText;
-            addSection.style.display = "block";
-
-            let closex   = document.querySelector('.close');
-            closex.addEventListener('click', function(){
-                addSection.style.display = 'none';
-                console.log('Hallo ');
-            }); 
+                addSection.innerHTML = xhr.responseText;
+                addSection.style.display = "block";
+                let closex   = document.querySelector('.close');
+                closex.addEventListener('click',
+                function(){
+                    addSection.style.display = 'none';
+                    console.log('Hallo ');
+            });
         }
     };
 

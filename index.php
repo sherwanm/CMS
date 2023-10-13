@@ -36,22 +36,13 @@ require_once('connection.php'); ?>
       <input type="button" value="second" id="second">
 
 
-
-      <input type="text" placeholder="Vorname" id="vorname">
-        <input type="text" placeholder="Nachname" id="nachname">
-        <input type="text" placeholder="Unternehmen" id="company">
-        <input type="text" placeholder="Position" id="position">
-        <input type="nummber" placeholder="Telefon" id="phonenummber">
-        <input type="date" placeholder="Gebutstag" id="birthdate">
-        <input type="text" placeholder="Vorname" id="note">
-
-
    </section>
 
    <section class="right">
 
       <section class="add"></section>
 
+ 
    <?php
 
       $sql = "SELECT firstName FROM contacts ;";
@@ -77,6 +68,17 @@ require_once('connection.php'); ?>
 </body>
 
 <style>
+
+
+.right {
+display: flex;
+flex-direction: column;
+}
+
+.right input{
+   margin-top: 5rem;
+
+}
 
 .close{
    font-size: large;
@@ -131,8 +133,8 @@ require_once('connection.php'); ?>
 
    .buttom, .buttom .left{
       position: sticky;
-      top:0;
       height: 100%;
+      top:0;
    }
 
    ul{
@@ -199,7 +201,6 @@ require_once('connection.php'); ?>
       flex-direction: row;
    }
 
-
    .search-input{
       padding: 10px;
       margin-right: 10px;
@@ -224,25 +225,23 @@ require_once('connection.php'); ?>
       width: 100%;
       left: 0%;
       top: 0%;
-      z-index: 100;
    }
 
  .buttom{
       display: grid;
       grid-template-columns: 15rem 1fr;
+      height:80vh;
+
    }
 
    .left{
-
       height: 100vh;
       display:flex;
       flex-direction: column;
-
    }
 
    .right{
       position: relative;
-      height:100vh;
    }
 
    .addIcon{
@@ -290,10 +289,6 @@ require_once('connection.php'); ?>
       flex-shrink: 0;
    }
 
-
-
-
-
     .search-input{
       padding: 10px;
       margin-right: 10px;
@@ -302,7 +297,6 @@ require_once('connection.php'); ?>
       border-radius: 3px;
       width: 50rem;
       font-size: large;
-
     }
 
     .search-input:focus{

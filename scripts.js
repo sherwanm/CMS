@@ -10,8 +10,6 @@ let right = document.querySelector('.right');
 let addIcon = document.querySelector('.addIcon');
 let addSection = document.querySelector('.add');
 
-
-
 addIcon.addEventListener('click', function(){
     let xhr = new XMLHttpRequest();
     xhr.open('POST', 'add.php', true);
@@ -25,8 +23,7 @@ addIcon.addEventListener('click', function(){
             closex.addEventListener('click', function(){
                 addSection.style.display = 'none';
                 console.log('Hallo ');
-            });
-
+            }); 
         }
     };
 

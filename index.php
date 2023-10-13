@@ -34,6 +34,18 @@ require_once('connection.php'); ?>
    <section class="left">
       <input type="button" value="First" id="first">
       <input type="button" value="second" id="second">
+
+
+
+      <input type="text" placeholder="Vorname" id="vorname">
+        <input type="text" placeholder="Nachname" id="nachname">
+        <input type="text" placeholder="Unternehmen" id="company">
+        <input type="text" placeholder="Position" id="position">
+        <input type="nummber" placeholder="Telefon" id="phonenummber">
+        <input type="date" placeholder="Gebutstag" id="birthdate">
+        <input type="text" placeholder="Vorname" id="note">
+
+
    </section>
 
    <section class="right">
@@ -66,13 +78,38 @@ require_once('connection.php'); ?>
 
 <style>
 
+.close{
+   font-size: large;
+   padding: 1rem;
+   background-color: white;
+   border:none;
+   cursor: pointer;
+}
+
+.addTop{
+   position: sticky;
+
+}
+
    .add{
-      background-color: red;
+      background-color: white;
       width: 100%;
       height:100%;
       display: none;
       position: absolute;
       z-index: 100;
+   }
+
+   .add .inputs{
+      display:flex;
+      flex-direction: column;
+
+   }
+
+   .add .inputs input{
+      width: 15rem;
+      margin: 0.3rem;
+      padding: 1rem;
    }
 
    *{
@@ -92,11 +129,17 @@ require_once('connection.php'); ?>
       width: 40%;
    }
 
+   .buttom, .buttom .left{
+      position: sticky;
+      top:0;
+      height: 100%;
+   }
+
    ul{
       list-style-type: none;
       text-align: left;
       padding: 3px;
-/* 
+/*
       -webkit-box-shadow: 0px 0px 3px 0px #000000;
       box-shadow: 0px 0px 3px 0px #000000; */
     }
@@ -119,7 +162,11 @@ require_once('connection.php'); ?>
    .top{
       display: flex;
       padding: 0.5rem;
-      margin-inline: 1.1rem;
+      position: sticky;
+      top:0;
+      z-index: 1001;
+      background-color: white;
+      width: 100%;
    }
 
    .top-left{
@@ -211,6 +258,10 @@ require_once('connection.php'); ?>
       width: 100%;
       background-color: white;
 
+   }
+
+   section{
+      outline: 1px solid blanchedalmond;
    }
 
 /*

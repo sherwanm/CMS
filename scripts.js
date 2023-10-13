@@ -10,6 +10,11 @@ let right = document.querySelector('.right');
 let addIcon = document.querySelector('.addIcon');
 let addSection = document.querySelector('.add');
 
+var script = document.createElement("script");
+script.type = "text/javascript";
+script.src = "https://code.jquery.com/jquery-3.7.1.js";
+document.getElementsByTagName("head")[0].appendChild(script);
+
 addIcon.addEventListener('click', function(){
     let xhr = new XMLHttpRequest();
     xhr.open('POST', 'add.php', true);
@@ -19,10 +24,27 @@ addIcon.addEventListener('click', function(){
                 addSection.innerHTML = xhr.responseText;
                 addSection.style.display = "block";
                 let closex   = document.querySelector('.close');
+                /// Insert
+                let addbtn = document.getElementById('addBTN');
+                addbtn.addEventListener('click', function(){
+                    console.log('Hallo ');
+                    let data = "vorname="+$("#vorname").val()+"&nachname="+$("#nachname").val();
+                    let xhr2 = new XMLHttpRequest();
+                    xhr2.open('POST', 'insert.php', true);
+                    xhr2.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                    xhr2.onreadystatechange = function() {
+                        if (xhr2.readyState === 4 && xhr2.status == 200) {
+                            console.log(xhr2.responseText);
+                        }
+                    };
+                    xhr2.send(data);
+                });
+
+                //////
+
                 closex.addEventListener('click',
                 function(){
                     addSection.style.display = 'none';
-                    console.log('Hallo ');
             });
         }
     };

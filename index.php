@@ -7,8 +7,6 @@ require_once('connection.php'); ?>
 </header>
 <body>
 
-<!-- Hallo World -->
-
 <section class="top">
 
    <div class="top-left">
@@ -42,22 +40,27 @@ require_once('connection.php'); ?>
 
       <section class="add"></section>
 
- 
    <?php
 
-      $sql = "SELECT firstName FROM contacts ;";
+      $sql = "SELECT * FROM contacts;";
       $result = MySQLi_query($connection, $sql);
 
       echo '<ul>';
       while($row = mysqli_fetch_array($result)){
       ?>
       <li onclick="">
-         <?php echo $row['firstName'] ?>
+      <div>
+            <div class="main-image">
+               <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['image']);?>">
+            </div>
+            <?php echo '<span>'.$row['firstName'].'</span>'; ?>
+            <?php echo '<span>'.$row['phoneNummber'].'</span>'; ?>
+            <?php echo '<span>'.$row['position'].', '.$row['company'].'</span>'; ?>
+      </div>
       </li>
 
       <?php
       }
-
    ?>
    </section>
 
@@ -69,6 +72,28 @@ require_once('connection.php'); ?>
 
 <style>
 
+li div{
+   display: flex;
+   flex-wrap: nowrap;
+   align-items: center;
+}
+
+li div > * {
+}
+
+.main-image{
+   margin: 0.5rem;
+   width:3rem;
+   border-radius: 50%;
+   overflow: hidden;
+}
+span{
+   margin-inline: 1rem;;
+}
+
+.main-image img{
+   width:100%;
+}
 
 .right {
 display: flex;

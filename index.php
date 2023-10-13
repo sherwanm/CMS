@@ -32,8 +32,6 @@ require_once('connection.php'); ?>
    <section class="left">
       <input type="button" value="First" id="first">
       <input type="button" value="second" id="second">
-
-
    </section>
 
    <section class="right">
@@ -78,8 +76,10 @@ li div{
    align-items: center;
 }
 
-li div > * {
+li{
+   margin-bottom: 0.2rem;
 }
+
 
 .main-image{
    margin: 0.5rem;
@@ -289,7 +289,7 @@ flex-direction: column;
    }
 
 /*
-   .top {
+.top {
       padding: 0.2rem;
       width: 100%;
       display: flex;
@@ -333,7 +333,6 @@ flex-direction: column;
     }
 
    */
-
 
 </style>
 

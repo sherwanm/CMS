@@ -27,8 +27,10 @@ addIcon.addEventListener('click', function(){
                 /// Insert
                 let addbtn = document.getElementById('addBTN');
                 addbtn.addEventListener('click', function(){
-                    console.log('Hallo ');
-                    let data = "vorname="+$("#vorname").val()+"&nachname="+$("#nachname").val();
+
+
+                    let data = "vorname="+$("#vorname").val()
+                    +"&nachname="+$("#nachname").val();
                     let xhr2 = new XMLHttpRequest();
                     xhr2.open('POST', 'insert.php', true);
                     xhr2.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');

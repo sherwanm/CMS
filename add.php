@@ -13,6 +13,7 @@
     </div>
 
     <div class="inputs">
+            <input type="file" name="image">
             <input type="button" value="Save" name="add" id="addBTN">
             <input type="text" placeholder="Vorname" id="vorname" name="vorname">
             <input type="text" placeholder="Nachname" id="nachname" name="nachname">
@@ -21,8 +22,6 @@
             <input type="nummber" placeholder="Telefon" id="phonenummber" name="phonenummber">
             <input type="date" placeholder="Gebutstag" id="birthdate" name="birthdate">
             <input type="text" placeholder="Vorname" id="note" name="note">
-
     </div>
- 
 
 </html>

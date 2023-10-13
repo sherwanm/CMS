@@ -17,7 +17,6 @@ require_once('connection.php'); ?>
       </div>
 
       <div class="icon">
-         
          <img src="icon.png">
          <p>Kontakte</p>
       </div>
@@ -37,7 +36,9 @@ require_once('connection.php'); ?>
       <input type="button" value="second" id="second">
    </section>
 
-   <section class="right" >
+   <section class="right">
+
+      <section class="add"></section>
 
    <?php
 
@@ -58,12 +59,21 @@ require_once('connection.php'); ?>
    </section>
 
 </section>
-   <div class="add">
+   <div class="addIcon">
    <img src="add.png">
    </div>
 </body>
 
 <style>
+
+   .add{
+      background-color: red;
+      width: 100%;
+      height:100%;
+      display: none;
+      position: absolute;
+      z-index: 100;
+   }
 
    *{
       box-sizing: border-box;
@@ -86,9 +96,9 @@ require_once('connection.php'); ?>
       list-style-type: none;
       text-align: left;
       padding: 3px;
-
+/* 
       -webkit-box-shadow: 0px 0px 3px 0px #000000;
-      box-shadow: 0px 0px 3px 0px #000000;
+      box-shadow: 0px 0px 3px 0px #000000; */
     }
 
     .live-search-result li{
@@ -188,7 +198,7 @@ require_once('connection.php'); ?>
       height:100vh;
    }
 
-   .add{
+   .addIcon{
       position: fixed;
       bottom: 20px;
       right: 20px;
@@ -197,7 +207,7 @@ require_once('connection.php'); ?>
       cursor:pointer;
    }
 
-   .add img{
+   .addIcon img{
       width: 100%;
       background-color: white;
 

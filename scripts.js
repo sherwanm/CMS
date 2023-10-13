@@ -7,7 +7,35 @@
 
 let first = document.getElementById('first');
 let right = document.querySelector('.right');
+let addIcon = document.querySelector('.addIcon');
+let addSection = document.querySelector('.add');
 
+
+
+addIcon.addEventListener('click', function(){
+    let xhr = new XMLHttpRequest();
+    xhr.open('POST', 'add.php', true);
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState  === 4 && xhr.status == 200){
+            addSection.innerHTML = xhr.responseText;
+            addSection.style.display = "block";
+
+            let closex   = document.querySelector('.close');
+            closex.addEventListener('click', function(){
+                addSection.style.display = 'none';
+                console.log('Hallo ');
+            });
+
+        }
+    };
+
+    xhr.send('first=');
+
+});
+
+
+// first button
 first.addEventListener('click', function(){
     let value = "Sarbast";
     let xhr = new XMLHttpRequest();
@@ -18,12 +46,13 @@ first.addEventListener('click', function(){
             right.innerHTML = xhr.responseText;
         }
     };
+
     xhr.send('first='+value);
 
 });
 
-
 /// ajax for live search
+
 document.addEventListener('DOMContentLoaded', function() {
     var searchInput = document.getElementById('search-input');
     var displayDiv  = document.getElementById('live-search-result');
@@ -49,7 +78,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     displayDiv.innerHTML = xhr.responseText;
                 }
             };
+
             xhr.send('live-search=' + value);
+
         }
     });
 
